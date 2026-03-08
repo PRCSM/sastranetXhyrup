@@ -1,0 +1,28 @@
+// Step 1: Character data and modal open/close
+
+const characters = {
+    "1": { name: "Iron Hook", type: "Tank", price: 29.99, image: "assets/background-remover/Whisk_0988bec7832708da9ba41e3fd34b1277dr (1).png" },
+    "2": { name: "Scarlett Blade", type: "Rogue", price: 34.99, image: "assets/background-remover/Whisk_73673ecf4a3e08e9f444171255797687dr (1).png" },
+    "3": { name: "Nita & Bruce", type: "Brawler", price: 39.99, image: "assets/background-remover/Whisk_7776c230ca6a12da8804831e281bf35edr (1).png" },
+    "5": { name: "Sylvan Arrow", type: "Archer", price: 32.99, image: "assets/background-remover/Whisk_7fbacb49e24966e98f2499bd4cd5d15ddr (1).png" },
+    "7": { name: "Hog Hammer", type: "Warrior", price: 37.99, image: "assets/background-remover/Whisk_d5e47c9f35e3ac890354dd46c32209a2dr (1).png" }
+};
+
+const modal = document.getElementById("modalOverlay");
+let currentChar = null;
+
+// Open modal when clicking "Get It"
+document.querySelectorAll(".btn-get").forEach(btn => {
+    btn.onclick = () => {
+        const id = btn.dataset.id;
+        currentChar = characters[id];
+        document.getElementById("modalImg").src = currentChar.image;
+        document.getElementById("modalName").textContent = currentChar.name;
+        document.getElementById("modalType").textContent = currentChar.type;
+        modal.classList.add("active");
+    };
+});
+
+// Close modal
+document.getElementById("modalClose").onclick = () => modal.classList.remove("active");
+modal.onclick = (e) => { if (e.target === modal) modal.classList.remove("active"); };
