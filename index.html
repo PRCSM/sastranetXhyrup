@@ -19,27 +19,24 @@
 <body>
 
     <!-- ═══════════════════════════════════════════════
-         SECTION 1 — FLOATING NAVBAR
-    ═══════════════════════════════════════════════ -->
-    <nav class="navbar" id="navbar">
-        <div class="navbar-inner">
-            <a href="#" class="logo">PIXEL LEGENDS</a>
-            <div class="nav-actions">
-                <a href="#characters" class="nav-link">Browse</a>
-                <button class="btn-orders" id="ordersBtn">Orders</button>
-            </div>
-        </div>
-    </nav>
-
-
-    <!-- ═══════════════════════════════════════════════
-         SECTION 2 — HERO (Video Background)
+         SECTION 1 — HERO (Video Background + Navbar)
     ═══════════════════════════════════════════════ -->
     <section class="hero" id="hero">
         <video class="hero-video" autoplay muted loop playsinline>
             <source src="assets/Whisk_ktm5ymzzq2mwgzyl1cnlldotegolrtlkvgn40so.webm" type="video/webm">
         </video>
         <div class="hero-overlay"></div>
+
+        <!-- Floating Navbar -->
+        <nav class="navbar" id="navbar">
+            <div class="navbar-inner">
+                <a href="#" class="logo">PIXEL LEGENDS</a>
+                <div class="nav-actions">
+                    <a href="#characters" class="nav-link">Browse</a>
+                    <button class="btn-orders" id="ordersBtn">Orders</button>
+                </div>
+            </div>
+        </nav>
 
         <div class="hero-content">
             <div class="hero-left">
@@ -211,6 +208,31 @@
         <span class="toast-icon">✅</span>
         <span class="toast-message" id="toastMessage">Order placed successfully!</span>
     </div>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 6B — ORDERS SIDEBAR
+    ═══════════════════════════════════════════════ -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="orders-sidebar" id="ordersSidebar">
+        <div class="sidebar-header">
+            <h3 class="sidebar-title">Your Orders</h3>
+            <button class="sidebar-close" id="sidebarClose">&times;</button>
+        </div>
+        <div class="sidebar-body" id="sidebarBody">
+            <!-- Orders will be loaded here -->
+            <div class="sidebar-empty" id="sidebarEmpty">
+                <p>No orders yet</p>
+            </div>
+        </div>
+        <div class="sidebar-footer" id="sidebarFooter">
+            <div class="sidebar-total">
+                <span>Total</span>
+                <span id="sidebarTotalPrice">$0.00</span>
+            </div>
+            <button class="btn-order-now" id="btnOrderNow">Order Now →</button>
+        </div>
+    </aside>
 
 
     <!-- ═══════════════════════════════════════════════
