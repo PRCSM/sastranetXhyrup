@@ -40,3 +40,32 @@ function updateTotal() {
 }
 
 quantity.oninput = updateTotal;
+
+// Step 3: Purchase saves to localStorage
+let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+document.getElementById("purchaseForm").onsubmit = (e) => {
+    e.preventDefault();
+    const qty = parseInt(quantity.value) || 1;
+    const name = document.getElementById("buyerName").value.trim();
+    if (!name) return alert("Enter your name");
+
+    orders.push({
+        name: currentChar.name,
+        image: currentChar.image,
+        buyer: name,
+        qty: qty,
+        total: qty * currentChar.price
+    });
+    localStorage.setItem("orders", JSON.stringify(orders));
+    modal.classList.remove("active");
+    showToast("Order placed: " + qty + "x " + currentChar.name);
+};
+
+// Toast notification
+function showToast(msg) {
+    const toast = document.getElementById("toast");
+    document.getElementById("toastMessage").textContent = msg;
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 3000);
+}
