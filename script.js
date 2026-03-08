@@ -69,3 +69,18 @@ function showToast(msg) {
     toast.classList.add("show");
     setTimeout(() => toast.classList.remove("show"), 3000);
 }
+
+// Step 4: Orders sidebar
+const sidebar = document.getElementById("ordersSidebar"), overlay = document.getElementById("sidebarOverlay");
+const closeSidebar = () => { sidebar.classList.remove("active"); overlay.classList.remove("active"); };
+
+document.getElementById("ordersBtn").onclick = () => { sidebar.classList.add("active"); overlay.classList.add("active"); renderOrders(); };
+document.getElementById("sidebarClose").onclick = overlay.onclick = closeSidebar;
+
+function renderOrders() {
+    const body = document.getElementById("sidebarBody");
+    if (!orders.length) { body.innerHTML = '<p style="text-align:center;color:#888;padding:20px">No orders yet</p>'; document.getElementById("sidebarTotalPrice").textContent = "$0.00"; return; }
+    let html = "", t = 0;
+    orders.forEach(o => { t += o.total; html += `<div class="order-item"><div class="order-item-img"><img src="${o.image}"></div><div class="order-item-info"><div class="order-item-name">${o.name}</div><div class="order-item-buyer">Buyer: ${o.buyer}</div><div class="order-item-meta"><span>x${o.qty}</span><span>$${o.total.toFixed(2)}</span></div></div></div>`; });
+    body.innerHTML = html; document.getElementById("sidebarTotalPrice").textContent = "$" + t.toFixed(2);
+}
