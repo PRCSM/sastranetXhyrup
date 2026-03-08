@@ -9,6 +9,8 @@ const characters = {
 };
 
 const modal = document.getElementById("modalOverlay");
+const quantity = document.getElementById("quantity");
+const totalPrice = document.getElementById("totalPrice");
 let currentChar = null;
 
 // Open modal when clicking "Get It"
@@ -19,6 +21,10 @@ document.querySelectorAll(".btn-get").forEach(btn => {
         document.getElementById("modalImg").src = currentChar.image;
         document.getElementById("modalName").textContent = currentChar.name;
         document.getElementById("modalType").textContent = currentChar.type;
+        document.getElementById("unitPrice").textContent = "$" + currentChar.price.toFixed(2);
+        document.getElementById("buyerName").value = "";
+        quantity.value = 1;
+        updateTotal();
         modal.classList.add("active");
     };
 });
@@ -26,3 +32,11 @@ document.querySelectorAll(".btn-get").forEach(btn => {
 // Close modal
 document.getElementById("modalClose").onclick = () => modal.classList.remove("active");
 modal.onclick = (e) => { if (e.target === modal) modal.classList.remove("active"); };
+
+// Step 2: Form with quantity and price calculation
+function updateTotal() {
+    const total = (parseInt(quantity.value) || 1) * currentChar.price;
+    totalPrice.textContent = "$" + total.toFixed(2);
+}
+
+quantity.oninput = updateTotal;
