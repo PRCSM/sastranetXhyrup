@@ -82,5 +82,15 @@ function renderOrders() {
     if (!orders.length) { body.innerHTML = '<p style="text-align:center;color:#888;padding:20px">No orders yet</p>'; document.getElementById("sidebarTotalPrice").textContent = "$0.00"; return; }
     let html = "", t = 0;
     orders.forEach(o => { t += o.total; html += `<div class="order-item"><div class="order-item-img"><img src="${o.image}"></div><div class="order-item-info"><div class="order-item-name">${o.name}</div><div class="order-item-buyer">Buyer: ${o.buyer}</div><div class="order-item-meta"><span>x${o.qty}</span><span>$${o.total.toFixed(2)}</span></div></div></div>`; });
-    body.innerHTML = html; document.getElementById("sidebarTotalPrice").textContent = "$" + t.toFixed(2);
+    body.innerHTML = html;
+    document.getElementById("sidebarTotalPrice").textContent = "$" + t.toFixed(2);
 }
+
+// Step 5: Order Now - complete & clear
+document.getElementById("btnOrderNow").onclick = () => {
+    if (!orders.length) return;
+    orders = [];
+    localStorage.setItem("orders", JSON.stringify(orders));
+    closeSidebar();
+    showToast("Order completed!");
+};
