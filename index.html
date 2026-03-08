@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Legends — Game Character Store</title>
+    <meta name="description" content="Collect legendary game characters. Choose your warrior. Build your squad.">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 1 — FLOATING NAVBAR
+    ═══════════════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="#" class="logo">PIXEL LEGENDS</a>
+            <div class="nav-actions">
+                <a href="#characters" class="nav-link">Browse</a>
+                <button class="btn-orders" id="ordersBtn">Orders</button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 2 — HERO (Video Background)
+    ═══════════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/Whisk_ktm5ymzzq2mwgzyl1cnlldotegolrtlkvgn40so.webm" type="video/webm">
+        </video>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-left">
+                <p class="hero-tag">⚔️ THE ULTIMATE COLLECTION</p>
+                <h1 class="hero-title">Collect<br>Legendary<br>Characters</h1>
+            </div>
+            <div class="hero-right">
+                <p class="hero-subtitle">Choose your warrior. Build your squad. Conquer the arena.</p>
+                <a href="#characters" class="btn-cta" id="browseCta">Browse Characters ↓</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 3 — ABOUT
+    ═══════════════════════════════════════════════ -->
+    <section class="about" id="about">
+        <div class="about-inner">
+            <h2>Every Legend Has a Story</h2>
+            <p>
+                From fearless pirates to mystical elven archers, each character is forged with
+                unique abilities and a backstory worth discovering. Collect them all and assemble
+                the ultimate squad.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 4 — CHARACTER CARDS
+    ═══════════════════════════════════════════════ -->
+    <section class="characters-section" id="characters">
+        <div class="section-header">
+            <h2 class="section-title">Choose Your Fighter</h2>
+            <p class="section-subtitle">5 legendary characters, each with unique powers</p>
+        </div>
+
+        <!-- Row 1: 3 cards -->
+        <div class="card-row">
+
+            <!-- Card 1 — Iron Hook -->
+            <div class="character-card">
+                <div class="card-body" style="background: linear-gradient(145deg, #60a5fa, #2563eb);">
+                    <img class="card-character"
+                        src="assets/background-remover/Whisk_0988bec7832708da9ba41e3fd34b1277dr (1).png"
+                        alt="Iron Hook">
+                    <div class="card-info">
+                        <h3 class="card-name">Iron Hook</h3>
+                        <p class="card-meta">Pixel Legends · <span class="card-type">Tank</span></p>
+                        <button class="btn-get" data-id="1">Get It →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 — Scarlett Blade -->
+            <div class="character-card">
+                <div class="card-body" style="background: linear-gradient(145deg, #c084fc, #7c3aed);">
+                    <img class="card-character"
+                        src="assets/background-remover/Whisk_73673ecf4a3e08e9f444171255797687dr (1).png"
+                        alt="Scarlett Blade">
+                    <div class="card-info">
+                        <h3 class="card-name">Scarlett Blade</h3>
+                        <p class="card-meta">Pixel Legends · <span class="card-type">Rogue</span></p>
+                        <button class="btn-get" data-id="2">Get It →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 — Nita & Bruce -->
+            <div class="character-card">
+                <div class="card-body" style="background: linear-gradient(145deg, #f87171, #b91c1c);">
+                    <img class="card-character"
+                        src="assets/background-remover/Whisk_7776c230ca6a12da8804831e281bf35edr (1).png"
+                        alt="Nita & Bruce">
+                    <div class="card-info">
+                        <h3 class="card-name">Nita & Bruce</h3>
+                        <p class="card-meta">Pixel Legends · <span class="card-type">Brawler</span></p>
+                        <button class="btn-get" data-id="3">Get It →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2: 2 cards (centered) -->
+        <div class="card-row card-row-center">
+
+            <!-- Card 4 — Sylvan Arrow -->
+            <div class="character-card">
+                <div class="card-body" style="background: linear-gradient(145deg, #4ade80, #15803d);">
+                    <img class="card-character"
+                        src="assets/background-remover/Whisk_7fbacb49e24966e98f2499bd4cd5d15ddr (1).png"
+                        alt="Sylvan Arrow">
+                    <div class="card-info">
+                        <h3 class="card-name">Sylvan Arrow</h3>
+                        <p class="card-meta">Pixel Legends · <span class="card-type">Archer</span></p>
+                        <button class="btn-get" data-id="5">Get It →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 — Hog Hammer -->
+            <div class="character-card">
+                <div class="card-body" style="background: linear-gradient(145deg, #f59e0b, #92400e);">
+                    <img class="card-character"
+                        src="assets/background-remover/Whisk_d5e47c9f35e3ac890354dd46c32209a2dr (1).png"
+                        alt="Hog Hammer">
+                    <div class="card-info">
+                        <h3 class="card-name">Hog Hammer</h3>
+                        <p class="card-meta">Pixel Legends · <span class="card-type">Warrior</span></p>
+                        <button class="btn-get" data-id="7">Get It →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 5 — PURCHASE MODAL (Popup)
+    ═══════════════════════════════════════════════ -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+
+            <!-- Character preview at top -->
+            <div class="modal-hero" id="modalHero">
+                <img id="modalImg" src="" alt="Character">
+            </div>
+
+            <div class="modal-body">
+                <h3 id="modalName" class="modal-name">Character Name</h3>
+                <span class="modal-type" id="modalType">Type</span>
+
+                <form id="purchaseForm" class="modal-form">
+                    <div class="form-group">
+                        <label for="buyerName">Your Name</label>
+                        <input type="text" id="buyerName" name="buyerName" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quantity">Qty</label>
+                            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Price</label>
+                            <div class="price-display" id="unitPrice">$0.00</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Total</label>
+                            <div class="total-display" id="totalPrice">$0.00</div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-purchase">
+                        Confirm Purchase →
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 6 — ORDER CONFIRMATION TOAST
+    ═══════════════════════════════════════════════ -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✅</span>
+        <span class="toast-message" id="toastMessage">Order placed successfully!</span>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 7 — FOOTER
+    ═══════════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo">PIXEL LEGENDS</span>
+                <p class="footer-tagline">Collect. Battle. Conquer.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#hero">Home</a>
+                <a href="#characters">Characters</a>
+                <a href="#about">About</a>
+            </div>
+            <div class="footer-credit">
+                <p>Built with ❤️ at <strong>HYRUP × sastranet</strong> Bootcamp 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
